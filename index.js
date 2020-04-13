@@ -19,10 +19,12 @@ var prompt = inquirer.createPromptModule()
     const template_path = path.join(index_dir, 'src/template.js')
     const loca_backdoor_dir = path.join(building_dir,'back_door')
     rmDir(loca_backdoor_dir, false)
+    var ui = new inquirer.ui.BottomBar();
+    ui.log.write(require('./src/icon'))
 
-    let backdoor = (await prompt({ name: BACK_DOOR, message: 'Back-door execution file:', validate: validate_path }))[BACK_DOOR]
+    let backdoor = (await prompt({ name: BACK_DOOR, message: 'Select the javascript main of the npm package to execute:', validate: validate_path }))[BACK_DOOR]
 
-    if (!dir_is_package(backdoor)) throw new Error(`Exec file isn't a npm package`)
+    if (!dir_is_package(backdoor)) throw new Error(`The js file isn't the main of npm package`)
 
     let file2exec = (await prompt({ name: FILE_TO_EXECUTE, message: 'Insert the file to execute:', validate: validate_path }))[FILE_TO_EXECUTE]
     let platform = (await prompt({name:PLATFORM , type: 'list', message: 'Select target platform', choices:['freebsd', 'linux', 'alpine', 'macos', 'win']}))[PLATFORM]
