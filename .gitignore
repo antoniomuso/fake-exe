@@ -114,4 +114,4 @@ dist
 .yarn/build-state.yml
 .pnp.*
 
-building/back_door/*
+build/back_door/*
