@@ -8,6 +8,17 @@
   },
   "author": "AntonioMusolino",
   "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "fake-exe": "index.js"
+  },
+  "keywords": [
+    "exe",
+    "execution",
+    "fake",
+    "hidden",
+    "mask"
+  ],
   "dependencies": {
     "inquirer": "^7.1.0",
     "ncp": "^2.0.0",
