@@ -11,5 +11,5 @@ Fake-exe allows to create a binary file of a main application that hides inside 
 
 ### Notes:
 - The javascript code must be inside a package.
-- The main application is not compiled inside the binary file, then relatives path between the main application and the binary generated does not have to change.
+- The main application is not compiled inside the binary file, then relative paths between the main application and the binary generated does not have to change.
 
