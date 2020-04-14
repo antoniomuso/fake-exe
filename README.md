@@ -1,7 +1,7 @@
 # Fake-Exe
 
 Create your fake executable to hide an application behind another.
-Fake-exe allow to create a binary file of an main application that hide inside javascript code that it will be runned in detached mode.
+Fake-exe allows to create a binary file of a main application that hides inside javascript code that it will be run in detached mode.
 
 ## Use 
 ```bash
@@ -11,5 +11,5 @@ Fake-exe allow to create a binary file of an main application that hide inside j
 
 ### Notes:
 - The javascript code must be inside a package.
-- The main application is not compile inside the binary file, Then the relative paths between the main application and the binary generated don't have to change.
+- The main application is not compiled inside the binary file, then relatives path between the main application and the binary generated does not have to change.
 
