@@ -15,7 +15,7 @@ Fake-exe allows to create a binary file of a main application that hides inside 
 
 ## ToDo
 - [x] make it work on linux
-- [] make it work on windows
+- [ ] make it work on windows
 
 ## Disclaimer
 These codes for educational and research purposes only.
